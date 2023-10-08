@@ -11,6 +11,7 @@ spec:
       sourceRef:
         name: prometheus-community
         namespace: default
+        kind: HelmRepository
   values:
     server:
       ingress:
