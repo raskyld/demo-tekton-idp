@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: TOCHANGE
+  namespace: TOCHANGE
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: prometheus
+      sourceRef:
+        name: prometheus-community
+        namespace: default
+  values:
+    server:
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        host: TOCHANGE
